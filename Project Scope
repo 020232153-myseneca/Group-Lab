@@ -1,1 +1,9 @@
 
+"""
+    Project Scope.
+    This is the docstring that defines the scope of this project. This project is a game that allows the user to play rock, paper, scissors against the computer.
+    The user is prompted and then enters an input. If it's valid it continues. If it's not it asks them again for an input.
+    The computer option is determined randomly.
+    Their options are compared and an output between win, lose, or tie it determined for the user.
+    Print the option out for the user.
+"""
