@@ -6,22 +6,33 @@
 import random
 
 options = ["rock", "paper", "scissors"] #list of options for the computer
-computerOption = random.choice(options) #This will choose a random option from your list for the computer
 
 print("You are playing rock, paper, scissors against the computer! Good luck!")
-
 while True:
-    input = input("Please between choose rock, paper, or scissors!: ")
-    if input in options:
+    computerOption = random.choice(options) #This will choose a random option from your list for the computer
+
+    while True:
+        userinput = input("Please between choose rock, paper, or scissors!: ")
+        if userinput in options:
+            break
+        print("You can't use that in rock, paper, scissors. Please choose between rock, paper, or scissors!")
+
+    print("You chose " + userinput)
+    print("The computer chose " + computerOption)
+
+    if userinput == computerOption:
+        print("You tied with the computer! Try for a win next time!")
+    elif (userinput == "paper" and computerOption == "rock") or (userinput == "rock" and computerOption == "scissors") or (userinput == "scissors" and computerOption == "paper"):
+        print("You beat the computer! You are awesome!")
+    else:
+        print("You lost to a computer! Practice more!")
+
+    while True:
+        replay = input("Do you want to play again?")
+        if replay in ["yes", "no"]:
+            break
+        print("Please pick 'yes' or 'no'")
+    
+    if replay == "no":
+        print("Thanks for playing!")
         break
-    print("You can't use that in rock, paper, scissors. Please choose between rock, paper, or scissors!")
-
-print("You chose " + input)
-print("The computer chose " + computerOption)
-
-if input == computerOption:
-    print("You tied with the computer! Try for a win next time!")
-elif (input == "paper" and computerOption == "rock") or (input == "rock" and computerOption == "scissors") or (input == "scissors" and computerOption == "paper"):
-    print("You beat the computer! You are awesome!")
-else:
-    print("You lost to a computer! Practice more!")
